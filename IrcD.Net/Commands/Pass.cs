@@ -39,11 +39,13 @@ namespace IrcD.Commands
                 IrcDaemon.Replies.SendAlreadyRegistered(info);
                 return;
             }
-            if (args[0] == IrcDaemon.Options.ServerPass)
-            {
+            //if (args[0] == IrcDaemon.Options.ServerPass)
+            //{
+
                 info.PassAccepted = true;
+                info.Password = args[0];
                 return;
-            }
+            //}
             if (IrcDaemon.Options.ConnectionPasses.Any(p => p == args[0]))
             {
                 // This is an allowed Server connection

@@ -24,15 +24,14 @@
 
   <admin>
     <location1>If you need an OP go to #admin</location1>
-    <location2>Visit: http://www.apophis.ch</location2>
-    <email>apophis@apophis.ch</email>
+    <email>michel@sokar.nl</email>
   </admin>
 
   <!--IRC Network name-->
   <network_name>pirate-net</network_name>
 
   <!--IRC Server name-->
-  <server_name>apophis.ch</server_name>
+  <server_name>irc.sokar.nl</server_name>
 
   <!--Password to the server, empty or missing means no password-->
   <server_pass></server_pass>
@@ -76,21 +75,7 @@
 
   <!--Message of the day: can have Mirc colors but, diplayed on connect-->
   <motd>
-    &#x03;14                                                       \|||/
-    &#x03;2 _           _  _       _ &#x02;             _&#x02;               &#x03;14(&#x03;2o o&#x03;14)
-    &#x03;2(_)        _| || |_    | |&#x02;            | |&#x02;      &#x03;14,~~~ooO~~(_)~~~~~~~~~,
-    &#x03;2 _ _ __ __|_  __  _| __| |&#x02;  _ __   ___| |_&#x02;     &#x03;14|&#x03;    apophis.ch&#x03;14      |
-    &#x03;2| | '__/ __|| || |_ / _` |&#x02; | '_ \ / _ \ __|&#x02;    &#x03;14|&#x03;   Thomas Bruderer&#x03;14  |
-    &#x03;2| | | | (_|_  __  _| (_| |&#x02;_| | | |  __/ |_&#x02;     &#x03;14|&#x03;      2009 - 2010&#x03;14   |
-    &#x03;2|_|_|  \___||_||_|  \__,_&#x02;(_)_| |_|\___|\__|&#x02;    &#x03;14'~~~~~~~~~~~~~~ooO~~~'
-    &#x03;14                                                      |__|__|
-    &#x02;Complete IRC Daemon for .NET and Mono&#x02;                  &#x03;14|| ||
-    &#x03;4______________________________________________________&#x03;14ooO Ooo&#x03;4__________&#x03;
-    &#x03;4'&#x03;                                                                       &#x03;4'&#x03;
-    &#x03;4|&#x03;                                                                       &#x03;4|&#x03;
-    &#x03;4|&#x03;  Small Code Footprint, 100% clean C# code, Fully compliant with RFC   &#x03;4|&#x03;
-    &#x03;4|&#x03;                                                                       &#x03;4|&#x03;
-    &#x03;4'_______________________________________________________________________'&#x03;
+    
   </motd>
 
 </config>
