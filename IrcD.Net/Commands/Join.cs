@@ -72,12 +72,15 @@ namespace IrcD.Commands
                 }
 
                 var chanuser = new UserPerChannelInfo(info, chan);
+                
 
                 // ToDo: this probably should get delegated to the Channel Type specific "NormalChannel" class, because it depends on the channel type.
                 if (!chan.Users.Any())
                 {
                     chanuser.Modes.Add(IrcDaemon.ModeFactory.GetChannelRank('o'));
                 }
+
+                //chanuser.
 
                 chan.UserPerChannelInfos.Add(info.Nick, chanuser);
                 info.UserPerChannelInfos.Add(chanuser);

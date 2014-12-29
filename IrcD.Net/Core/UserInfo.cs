@@ -27,6 +27,7 @@ using IrcD.Channel;
 using IrcD.Commands.Arguments;
 using IrcD.Modes;
 using IrcD.Utils;
+using Hitbox;
 
 namespace IrcD
 {
@@ -293,7 +294,8 @@ namespace IrcD
             {
                 // Important: remove nick first! or we end in a exception-catch endless loop
                 upci.ChannelInfo.UserPerChannelInfos.Remove(Nick);
-
+                upci.hws.Remove();
+                GC.Collect();
                 IrcDaemon.Commands.Send(new QuitArgument(this, upci.ChannelInfo, message));
             }
 
@@ -310,6 +312,7 @@ namespace IrcD
             {
                 IrcDaemon.Sockets.Remove(socket);
             }
+
 
             // Close connection
             socket.Close();

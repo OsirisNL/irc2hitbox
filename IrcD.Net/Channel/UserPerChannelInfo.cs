@@ -21,12 +21,16 @@
 
 using System.Text;
 using IrcD.Modes;
+using IrcD.Commands.Arguments;
+using Hitbox;
+
 
 namespace IrcD.Channel
 {
     public class UserPerChannelInfo : InfoBase
     {
         private readonly UserInfo userInfo;
+        public HitboxWebsocket hws;
 
         public UserInfo UserInfo
         {
@@ -52,6 +56,30 @@ namespace IrcD.Channel
             this.userInfo = userInfo;
             this.channelInfo = channelInfo;
             modes = new RankList(userInfo.IrcDaemon);
+
+            
+            hws = new HitboxWebsocket("ws://" + HitboxHelper.GetServer() + "/socket.io/1/websocket/" + HitboxHelper.GetIdentityId());
+            hws.Username = userInfo.Nick;
+            hws.Password = userInfo.Password;
+            //IrcD.Utils.Logger.Log("Username: " + userInfo.Nick + " Password: " + userInfo.Password);
+
+            hws.Connect(channelInfo.Name.Remove(0, 1));
+            hws.OnError += (sender, e) =>
+                {
+                    var i = 0;
+                };
+            
+            hws.OnMessage += (sender, e) =>
+                {
+                    foreach (UserInfo user in channelInfo.Users)
+                    {
+                       // if ( user != userInfo )
+                            //if ( e.Data.Contains("buffer"))
+                                IrcDaemon.Commands.Send(new PrivateMessageArgument(user, channelInfo, channelInfo.Name, "test"));
+                    }
+                    
+                    //this.WriteLine(new StringBuilder("test"));
+                };
         }
 
 

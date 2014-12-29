@@ -391,7 +391,7 @@ namespace IrcD
                             if (sockets[s].IsAcceptSocket)
                             {
                                 Socket temp = s.Accept();
-                                sockets.Add(temp, new UserInfo(this, temp, ((IPEndPoint)temp.RemoteEndPoint).Address.ToString(), false, String.IsNullOrEmpty(Options.ServerPass)));
+                                sockets.Add(temp, new UserInfo(this, temp, ((IPEndPoint)temp.RemoteEndPoint).Address.ToString(), false, false));
                                 Logger.Log("New Client connected!", 4, "MainLoop");
                             }
                             else
